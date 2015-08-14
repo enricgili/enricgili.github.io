@@ -1,0 +1,484 @@
+html {
+}
+
+body {
+    color:#333;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:85%;
+    margin:0px;
+    overflow: hidden;
+}
+
+:root {
+  --Search_color_main:#F00;
+  --Translate_color_main: #0C6;
+  --Explain_color_main: #09F;
+  --Define_color_main: #BD7EC2;
+}
+
+a {text-decoration:none}
+
+a:link {color:#333;}    /* unvisited link */
+a:visited {color:#333;} /* visited link */
+a:hover {color:#62A2D4; text-decoration:underline;}   /* mouse over link */
+a:active {color:#000000;}  /* selected link */
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+
+img{
+        /*display:none;*/
+    /*-webkit-filter: grayscale(1); /* Webkit */*/
+    /*filter: gray; /* IE6-9 */*/
+    /*filter: grayscale(1); /* W3C */*/
+}
+
+
+
+#sectionHead{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size:110%;
+    height:50px;
+    /*background-color: rgb(240,240,240);*/
+    /*margin-bottom: 5px;*/
+    margin-left: 1px;
+    border-color: #D2D2D2;
+    border-style: dotted;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+/* - - - - - - - - LAYOUT GRID - - - - - - - - */
+
+#contentwrapper{
+    display:table;
+    width: 100%;
+}
+
+.linkContent){
+    color:#F00;
+}
+
+#navCol{
+    float: left;
+    height:inherit;
+    width: 50px; /* Width of left column in pixels */
+}
+
+
+#leftCol{
+    float: left;
+    height:inherit;
+    width: 206px; /* Width of left column in pixels*/
+    /*padding-right:10px;*/
+}
+
+#CenterCol{
+    float: left;
+    height:inherit;
+    width: 194px; /* Width of right column in pixels */
+    /*padding-right:10px;*/
+}
+
+#rightCol{
+    float: left;
+    height:inherit;
+    /*padding-right:10px;*/
+    width: 500px; /* Width of right column in pixels */
+}
+
+#reviewCol{
+    float: left;
+    height:inherit;
+    /*padding-right:10px;*/
+    width: 190px; /* Width of right column in pixels */
+
+}
+
+
+
+/* SEARCH column */
+
+/* - - - - - - - SEARCH - - - - - - -  */
+
+#searchLabel{
+    color:#FFF;
+    background-color: #13A4EC;
+    padding-left:3px;
+    padding-right:3px;
+    border-radius:5px;
+}
+
+#searchString {
+    color: #13A4EC;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #AAA;
+    background-color: transparent;
+    outline:none;
+    width:135px;
+}
+
+#searchLang{
+    width:85%;
+}
+
+#searchResults{
+    overflow-y:scroll;
+    box-sizing:border-box;
+    padding-top: 3px;
+    margin-right: 5px;
+}
+
+.searchTerm{
+    padding-left: 10px;
+    border-color: #D2D2D2;
+    border-style: dotted;
+    border-width: 0px;
+    border-bottom-width: 1px;
+
+}
+
+.searchResultLink:hover{
+    color:#FFF;
+    background-color: #13A4EC;
+    text-decoration: none;
+    border-radius:3px;
+    padding-right:3px;
+    padding-left:3px;
+}
+
+
+/* TRANSLATION column */
+
+#transLabel{
+    color:#FFF;
+    background-color: #F75A2D;
+    padding-left:3px;
+    padding-right:3px;
+    border-radius:5px;
+}
+
+.sortBy{
+}
+
+#translatedWord {
+    padding-bottom:5px;
+    margin-right:5px;
+    border-bottom: 1px dotted #D2D2D2;
+    /*padding-top: 3px;*/
+    padding-left: 10px;
+}
+
+#translatedWord a:link,
+#translatedWord a:visited,
+#translatedWord a:hover {
+    /*color: #AAA;*/
+    color: #F75A2D;
+}
+
+.OriginLangTrans {
+    color: #F75A2D;
+}
+
+#listResults{
+    overflow-y:scroll;
+    box-sizing:border-box;
+    padding-right:1em;
+    padding-top: 3px;
+}
+
+.langLabel{
+    background-color: #CFCF;
+    width: 100%;
+    float:left;
+    margin-bottom:2px;
+    border-color: #D2D2D2;
+    border-style: dotted;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    padding-bottom: 2px;
+    padding-top: 1px;
+    padding-left: 10px;
+    /*padding-left: 38px;
+    text-indent: -28px;*/
+}
+
+.transAbbrvLink{
+    color:#0C6;
+    padding-right:5px;
+    padding-left:3px;
+    border-radius: 5px;
+    margin-right: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FFA085;
+    display: inline-block;
+}
+
+.transAbbrvLink a:hover{
+    background-color: #F75A2D;
+}
+
+.transAbbrvLinkPersonal	{
+    background-color:#FFA085;
+    color:#FFF;
+    padding-right:5px;
+    padding-left:3px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.langLink{
+    background-color:#FFF;
+    color:#FFF;
+}
+
+.resultCategory{
+    width: 100%;
+    /* background-color: rgb(245, 245, 245); */
+    display: inline-block;
+    padding-left: 5px;
+    color: #F75A2D;
+    /* border-radius: 3px; */
+    margin-bottom: 3px;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+
+.langFamLabel{
+    width: 100%;
+    background-color: rgb(239, 239, 239);
+    display: inline-block;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 3px;
+    color: #616161;
+    border-radius: 3px;
+}
+
+.langSubFamLabel{
+    width: 100%;
+    display: inline-block;
+    padding-left: 5px;
+    color: #F75A2D;
+    margin-bottom: 3px;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    padding-top: 5px;
+}
+
+.wikisizeLabel{
+    width: 100%;
+    background-color: rgb(200, 200, 200);
+    display: inline-block;
+    padding-left: 10px;
+}
+
+
+/* EXPLAIN CONTENT column */
+
+#explainLabel{
+    color:#FFF;
+    background-color: #15BFA6;
+    padding-left:3px;
+    padding-right:3px;
+    border-radius:5px;
+}
+
+#translatePage{
+    padding-bottom: 5px;
+    border-color: #D2D2D2;
+    border-style: dotted;
+    border-width: 0;
+    border-bottom-width: 1px;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+#translatePage a:link, a:hover, a:active {
+    color: #15BFA6;
+}
+
+#contentBlocks{
+    overflow-y:scroll;
+    box-sizing:border-box;
+    padding-right:1em;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+#pageContent{
+    display:block;
+}
+
+#pageContent a:link, a:hover, a:active {
+    text-decoration:underline;
+}
+
+#wikiImagesGallery{
+    display: inline-block;
+}
+
+.wikiImageFrame{
+    width: 125px;
+    height:125px;
+    display: inline-block;
+    padding: 2px;
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: rgb(127,127,127);*/
+    margin: 1px;
+    background-color: rgb(230,230,230);
+    border-radius: 3px;
+    overflow:hidden;
+}
+
+.wikiImage{
+    max-width:100%;
+    margin: auto;
+    display: block;
+    /*max-height:100%;
+    vertical-align: middle;*/
+}
+
+#wikiLinks{
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.conceptLink{
+    background-color: rgb(230,230,230);
+    border-radius: 3px;
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.conceptLinkTab{
+    background-color: #999;
+    color: #FFF;
+    min-width: 10px;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+ /* REVIEW column */
+
+#historyList{
+    overflow-y:scroll;
+    padding-left: 10px;
+}
+
+
+#reviewLabel{
+    color:#FFF;
+    background-color: #E0A823;
+    padding-left:3px;
+    padding-right:3px;
+    border-radius:5px;
+}
+
+.langAbbrNoLink{
+    background-color:#F8F8F8;
+    color:#333;
+    padding-right:5px;
+    padding-left:3px
+}
+
+/* DEFINE column */
+
+
+
+#definedWord{
+    padding-bottom:3px;
+    /*border-bottom: 1px dotted #888888;*/
+}
+
+#definedWord a:link, a:hover, a:active {
+    color: #AAA;
+}
+
+
+#definition{
+    /*overflow-y:scroll;*/
+    /*border-bottom: 1px dotted #888888;*/
+}
+
+#definition a:link, a:hover, a:active {
+    text-decoration:underline;
+}
+
+
+
+
+.infobox{
+    float:right;
+    padding:1em;
+    background-color:rgb(247, 247, 247);
+    margin: 1em;
+    margin-top: 0em;
+    box-sizing: border-box;
+    clear:right;
+}
+
+.mw-editsection{
+    display:none;
+}
+
+.tleft{
+    float:left;
+    clear:left;
+    margin:1em;
+    margin-left:0em;
+    box-sizing: border-box;
+}
+
+.tright{
+    float:right;
+    clear:right;
+    margin:1em;
+    margin-right:0em;
+    box-sizing: border-box;
+}
+
+.plainlinks ul{
+    display:none;
+}
