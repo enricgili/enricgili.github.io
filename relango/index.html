@@ -10,19 +10,19 @@
     <body>
         <div id="contentwrapper">
 
-            <!-- Navigation Column -->
+            <!-- NAVIGATE Column -->
 
             <div id="navCol">
-                <div id='sectionHead' style="padding-left:5px">
-                    <img id="logoButton" src="img/icon_logo_grey.svg" style="padding-left:5px" onMouseOver="this.src='img/icon_logo_grey_hover.svg'" onmouseout="this.src='img/icon_logo_grey.svg'"></img>
+                <div class='sectionHead' id="navHead">
+                    <img id="logoButton" src="img/icon_logo_grey.svg" style="padding-left:5px" onMouseOver="this.src='img/icon_logo_grey_hover.svg'" onmouseout=""ut="this.src='img/icon_logo_grey.svg'"></img>
                 </div>
             </div>
 
-            <!--  Search results Column -->
+            <!--  SEARCH Column -->
 
-            <div id="leftCol" class="leftCol">
-                  <div id='sectionHead'>
-                  <span id="searchLabel">Search</span> <input type="text" id="searchString" autofocus></br>
+            <div id="searchCol">
+                  <div class='sectionHead' id='searchHead'>
+                  <span class='sectionLabel' id="searchLabel">Search</span> <input type="text" id="searchString" autofocus></br>
                      in
                     <select id="searchLang">
                           <!-- <option value="en" selected>English</option>  -->
@@ -31,11 +31,11 @@
                  <div id="searchResults"></div>
             </div>
 
-            <!--  Translation Column -->
+            <!--  TRANSLATE Column -->
 
-            <div id="CenterCol">
-                <div id='sectionHead'>
-                     <span id="transLabel">Translate</span> & sort by
+            <div id="translateCol">
+                <div class='sectionHead' id='translateHead'>
+                     <span class='sectionLabel' id="transLabel">Translate</span> & sort by
                      <select id="sortBy">
                           <option value="alpha" selected>Alphabet</option>
                           <option value="familyLang">Language Family</option>
@@ -48,15 +48,22 @@
             </div>
 
 
-            <!-- Content Column -->
+            <!-- EXPLAIN Column -->
 
-            <div id="rightCol">
-                <div id='sectionHead'>
-                    <span id="explainLabel">Explain</span> with <a href="#wikiTextAnchor">text <span id="wikiReadingTime"></span></a>| <a href="#imageAnchor">images <span id="wikiImgCounter"></span></a>| <a href="#wikiConcepts">Concepts <span id="wikiConceptsCounter"></span></a>| <a href="#weblinks">Weblinks (0)</a> | <a href="#wikiBooks">Books (0)</a> | <a href="#wikiMedia">Media (0)</a> | <a href="#locationAnchor">Locations (1)</a> | <a href="#wiktionaryAnchor">Definition (0)</a>
+            <div id="explainCol">
+                <div class='sectionHead' id='explainHead'>
+                    <span class='sectionLabel' id="explainLabel">Explain</span> with
+                    <a href="#wikiTextAnchor"><img src="img/rlng_text_icon.png" class='explainIcon'><span id="wikiReadingTime"></span></a> |
+                    <a href="#imageAnchor"><img src="img/rlng_img_icon.png" class='explainIcon'><span id="wikiImgCounter"></span></a> |
+                    <a href="#wikiConcepts"><img src="img/rlng_entities_icon.png" class='explainIcon'><span id="wikiConceptsCounter"></span></a> |
+                    <!-- <a href="#weblinks"><img src="img/rlng_link_icon.png" class='explainIcon'>(0)</a> | -->
+                    <!-- <a href="#wikiBooks"><img src="img/rlng_books_icon.png" class='explainIcon'>(0)</a> | -->
+                    <a href="#locationAnchor"><img src="img/rlng_locations_icon.png" class='explainIcon'><span id="wikiLocationsCounter"></span></a> |
+                    <a href="#wiktionaryAnchor"><img src="img/rlng_definition_icon.png" class='explainIcon'><span id="wikiDefineCounter"></span></a>
                 </div>
 
                 <!-- Title of the translated page -->
-                <div id="translatePage">
+                <div id="subheaderExplain">
                 </div>
 
                 <div id="contentBlocks">
@@ -80,38 +87,42 @@
                     <a name="wikiConcepts"></a>
                     <div><h3>Related Concepts </h3></div>
                     <div id="wikiLinks">
+
                     </div>
                     <hr>
 
                     <!-- all the weblinks linked from the page -->
-                    <a name="weblinks"></a>
+                    <!-- <a name="weblinks"></a>
                     <div id="weblinks">
                         <h3>Related web links </h3>
                         <a href="#">Example of a weblink www.thodd.eu</a></br>
                     </div>
-                    <hr>
+                    <hr> -->
 
                     <!-- all the books referenced in the wikipedia article -->
-                    <a name="wikiBooks"></a>
+                    <!-- <a name="wikiBooks"></a>
                     <div id="wikiBooks">
                             <h3>Related Books</h3>
                     </div>
-                    <hr>
+                    <hr> -->
 
                     <!-- all the media files (video) referenced in the wikipedia article -->
-                    <a name="wikiMedia"></a>
+                    <!-- <a name="wikiMedia"></a>
                     <div id="wikiMedia">
                         <h3>Related Multimedia</h3>
                     </div>
-                    <hr>
+                    <hr> -->
 
                     <!-- all the geolocations -->
                     <a name="locationAnchor"></a>
-                    <div id="maps">
+                    <div id="wikiMaps">
                         <h3>Related locations</h3>
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2596.7104459562743!2d2.294480999999841!3d48.85837000715064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1425318246557" width="400" height="300" frameborder="0" style="border:0"></iframe> -->
-                    </div>
+                        <div id="geoFrames">
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2596.7104459562743!2d2.294480999999841!3d48.85837000715064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1425318246557" width="300" height="300" frameborder="0" style="border:0"></iframe> -->
+                        </div>
                     <hr>
+                    </div>
+
 
                     <!-- page definition from wiktionary (if available)-->
                     <a name="wiktionaryAnchor"></a>
@@ -127,11 +138,11 @@
                 </div>
             </div>
 
-            <!-- Review Column -->
+            <!-- REVIEW Column -->
 
             <div id="reviewCol">
-                <div id='sectionHead'>
-                    <span id="reviewLabel">Review</span> previous keywords <a id="clearHistory" href="#"> clear history </a>
+                <div class='sectionHead' id='reviewHead'>
+                    <span class='sectionLabel' id="reviewLabel">Review</span> previous keywords <a id="clearHistory" href="#"> clear history </a>
                 </div>
                 <div id="historyList">
                 </div>
