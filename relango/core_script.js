@@ -5,6 +5,7 @@ $(document).ready(function(){
     var gSearchLang = "";
     var gSearchString = "";
 
+
 // search word
 // search language
 // translate sorting format
@@ -331,6 +332,17 @@ $(document).ready(function(){
 
     // GENERAL FUNCTIONS PAGE //
 
+        function updateUniqueURL(){
+            // https://rosspenman.com/pushstate-jquery/
+            // ask all modules for their variables
+            // string them together
+            // add them to the URL
+            // SAMPLE: history.pushState({id: 'uniqueIDhere'}, '', 'feliciano&id=venado&ls=ca&33405734573498534');
+
+        }
+
+
+
         function capitalise(str) {
             var split = str.split(" ");
             var result = new Array();
@@ -543,7 +555,7 @@ $(document).ready(function(){
                                     }else{
                                         wikisizeLabelHTML='';
                                     }
-                                    $("#listResults").append(wikisizeLabelHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink">' + sortedList[i][0] +'</a> <a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
+                                    $("#listResults").append(wikisizeLabelHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink" lang="'+ sortedList[i][0] + '" fullLang="'+ findLangAbbr(sortedList[i][0]) + '" >' + sortedList[i][0] +'</a><a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
                                 }
                             break;
 
@@ -563,7 +575,7 @@ $(document).ready(function(){
                                     }else{
                                         LangFamilyHTML='';
                                     };
-                                    $("#listResults").append(LangFamilyHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink">' + sortedList[i][0] +'</a> <a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
+                                    $("#listResults").append(LangFamilyHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink" lang="'+ sortedList[i][0] + '" fullLang="'+ findLangAbbr(sortedList[i][0]) + '" >' + sortedList[i][0] +'</a> <a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
                                 }
                             break;
 
@@ -594,7 +606,7 @@ $(document).ready(function(){
                                     }else{
                                         LangSubFamilyHTML='';
                                     };
-                                    $("#listResults").append(LangFamilyHTML + LangSubFamilyHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink">' + sortedList[i][0] +'</a> <a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
+                                    $("#listResults").append(LangFamilyHTML + LangSubFamilyHTML + '<div class="langLabel"><a href="#" class="transAbbrvLink" lang="'+ sortedList[i][0] + '" fullLang="'+ findLangAbbr(sortedList[i][0]) + '" >' + sortedList[i][0] +'</a><a href="#" class="langLink" id="'+ sortedList[i][0] +'">'+ sortedList[i][1] +'</a></div>');
                                 }
                             break;
 
@@ -701,11 +713,13 @@ $(document).ready(function(){
                 if (found != null){
                     $('#wikiImages').show();
                     for(u=0;u<found.length;u++){
-                        theSource = found[u].src.replace("file://","");
+                        var $found = $(found[u]);
+                        var $Source = $found.attr('src');
                         var linkHTMLopen = '';
                         var linkHTMLclose = '';
-                         if (found[u].srcset != null){
-                            srcSetArray = found[u].srcset.split(" ");
+                        var $srcSet = $found.attr('srcset');
+                         if ($srcSet != null){
+                            srcSetArray = $srcSet.split(" ");
                             fullRes = srcSetArray[2];
                             if (fullRes != null){
                                 fullRes = fullRes.replace("//","http://");
@@ -713,7 +727,7 @@ $(document).ready(function(){
                                 var linkHTMLclose = '</a>';
                             }
                         }
-                        $wikiImagesGallery.append('<div class="wikiImageFrame">'+ linkHTMLopen + '<img src="https://' + theSource + '" class="wikiImage"></img>'+ linkHTMLclose + '</div>');
+                        $wikiImagesGallery.append('<div class="wikiImageFrame">'+ linkHTMLopen + '<img src="https:' + $Source + '" class="wikiImage"></img>'+ linkHTMLclose + '</div>');
                     }
                     $('#wikiImgCounter').text(' ('+found.length+')');
                 } else {
